@@ -1,0 +1,22 @@
+<h1>Consoles</h1>
+
+<table class="table table-striped table-condensed">
+
+  <tbody>
+    <% @consoles.each do |console| %>
+      <tr>
+        <td><%= console.name %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_console_path(console) %></td>
+          <td><%= link_to 'Delete', console, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Console', new_console_path, class: 'btn btn-default' %>
+<% end %>
