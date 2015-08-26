@@ -19,14 +19,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
 
-  config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'soundresume.herokuapp.com' }
 
   config.action_mailer.smtp_settings = {
   :address   => "smtp.mandrillapp.com",
   :port      => 587,
   :user_name => ENV["MANDRILL_USERNAME"],
   :password  => ENV["MANDRILL_API_KEY"],
-  :domain => 'herokuapp.com',
+  :domain => 'heroku.com',
   :authentication => :plain
 
 }
