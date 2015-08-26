@@ -6,7 +6,7 @@
     <% @consoles.each do |console| %>
       <tr>
         <td><%= console.name %></td>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.email == "ericeschelbach@gmail.com" %>
           <td><%= link_to 'Edit', edit_console_path(console) %></td>
           <td><%= link_to 'Delete', console, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

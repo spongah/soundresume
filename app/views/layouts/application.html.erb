@@ -25,7 +25,7 @@
 		  <li><%= link_to "Venues",       venues_path %></li>
 		  <li><%= link_to "Consoles",       consoles_path %></li>
 		  <li><%= link_to "Artists",       artists_path %></li>
-		  <% if user_signed_in? %>
+		  <% if user_signed_in? && current_user.email == "ericeschelbach@gmail.com" %>
 		  	<li><%= link_to "Genres",		genres_path %></li>
 		  <% end %>
 		  </ul>

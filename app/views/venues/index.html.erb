@@ -5,7 +5,7 @@
     <% @venues.each do |venue| %>
       <tr>
         <td><%= venue.name %></td>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.email == "ericeschelbach@gmail.com" %>
           <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
           <td><%= link_to 'Delete', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

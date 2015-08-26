@@ -11,7 +11,7 @@
     <% @genres.each do |genre| %>
       <tr>
         <td><%= genre.name %></td>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.email == "ericeschelbach@gmail.com" %>
           <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
           <td><%= link_to 'Delete', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
