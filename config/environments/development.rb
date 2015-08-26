@@ -16,7 +16,22 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { :host => 'localhost' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.default_url_options = { :host => 'soundresume.herokuapp.com' }
+
+  config.action_mailer.smtp_settings = {
+  :address   => "smtp.gmail.com",
+  :port      => 587,
+  :user_name => ENV["GMAIL_USERNAME"],
+  :password  => ENV["GMAIL_PASSWORD"],
+  :domain => 'mail.google.com',
+  :authentication => :login
+
+}
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
