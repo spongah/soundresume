@@ -16,6 +16,13 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'soundresume.herokuapp.com' }
 
+  config.action_mailer.smtp_settings = {
+  :address   => "smtp.mandrillapp.com",
+  :port      => 587,
+  :user_name => ENV["MANDRILL_USERNAME"],
+  :password  => ENV["MANDRILL_API_KEY"]
+}
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
