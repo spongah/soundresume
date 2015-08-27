@@ -1,5 +1,6 @@
 <h2>Log in</h2>
 
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal", style: "padding-right: 25px"}) do |f| %>
   <div class="form-group">
     <%= f.label :email, class: "col-sm-2 control-label" %><br />
@@ -22,7 +23,7 @@
         <%= f.label :remember_me %>
       </div>
     </div>
-  <% end -%>
+  <% end %>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
