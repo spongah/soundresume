@@ -1,6 +1,6 @@
 <h2>Change your password</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "horizontal-form" }) do |f| %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "horizontal-form", style: "padding-left: 25px" }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
@@ -9,12 +9,12 @@
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     <% end %>
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="padding-top: 15px">
       <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control" %>
     </div>
   </div>
-
-  <div class="form-group">
+  <br>
+  <div class="form-group" style="padding-top: 25px">
     <%= f.label :password_confirmation, "Confirm new password" %><br />
     <div class="col-sm-6">
       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
