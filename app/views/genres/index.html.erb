@@ -22,7 +22,7 @@
 
 <br>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.email == "ericeschelbach@gmail.com" %>
   <%= link_to 'New Genre', new_genre_path, class: 'btn btn-default' %>
 <% end %>
 
