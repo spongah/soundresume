@@ -36,7 +36,7 @@ gem 'devise'
 
 gem 'mandrill-api'
 
-gem 'dotenv-rails'
+# gem 'dotenv-rails'
 
 gem 'pry-rails'
 
